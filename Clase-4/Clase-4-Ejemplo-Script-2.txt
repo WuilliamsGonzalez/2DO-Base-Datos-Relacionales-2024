@@ -1,0 +1,40 @@
+def ordenar_diccionarios(lista_diccionarios, clave):
+    return sorted(lista_diccionarios, key= lambda x: x[clave])
+
+#Lista de diccionarios
+personas = [
+    {'nombre': 'Ana', 'edad': 30},
+    {'nombre': 'Luis', 'edad': 25},
+    {'nombre': 'Carlos', 'edad': 35}, 
+]
+
+clave = "edad"
+personas_ordenadas = ordenar_diccionarios(personas, clave)
+print("Lista ordenada por edad:", personas_ordenadas)
+
+
+
+
+from collections import Counter
+import re
+
+def contar_palabras(texto):
+    # Convertir a minúsculas y eliminar caracteres no alfabéticos
+    palabras = re.findall(r'\b\w+\b', texto.lower())
+    # Contar la frecuencia de cada palabra
+    frecuencia = Counter(palabras)
+    return frecuencia
+texto = input("Ingrese un texto: ")
+resultado = contar_palabras(texto)
+print("Frecuencia de palabras:", resultado)
+
+
+def fibonacci(n):
+    secuencia = [0, 1]
+    while len(secuencia) < n:
+        secuencia.append(secuencia[-1] + secuencia[-2])
+    return secuencia
+
+numero = int(input("Ingrese la cantidad de términos de Fibonacci: "))
+resultado = fibonacci(numero)
+print("Secuencia de Fibonacci:", resultado)

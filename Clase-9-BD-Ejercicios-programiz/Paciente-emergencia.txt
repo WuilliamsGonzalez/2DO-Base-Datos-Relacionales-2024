@@ -1,0 +1,38 @@
+--Sistema de gestión de emergencias en hospitales.
+
+create table Paciente(
+	id_paciente int PRIMARY KEY,
+  	nombre varchar(50),
+	edad int
+);
+
+create table Medico(
+	id_medico int PRIMARY KEY,
+  	nombre varchar(50),
+	especialidad varchar(50)
+);
+
+create table Emergencia(
+	id_emergencia int PRIMARY KEY,
+  	descripcion varchar(50),
+	fecha date,
+  	id_paciente int,
+  	id_medico int,
+  	FOREIGN KEY (id_paciente) references Paciente (id_paciente),
+  	FOREIGN KEY (id_medico) references Medico(id_medico)
+);
+
+--Sentencias o consulta emergencias atendidas por un medico en particular
+
+select Emergencia.fecha, Emergencia.descripcion
+from Emergencia
+join Medico on Emergencia.id_medico = Medico.id_medico
+where Medico.nombre = 'Dr. Perez';
+
+--Consulta cuenta cuantas emergencias ha tenido cada paciente y selecciona a los que han tenido más de 3 emergencias
+
+select Paciente.nombre, count(Emergencia.id_emergencia) as num_emergencia
+from Paciente 
+join Emergencia on Paciente.id_paciente = Emergencia.id_emergencia
+group by Paciente.nombre
+having count(Emergencia.id_emergencia > 3);

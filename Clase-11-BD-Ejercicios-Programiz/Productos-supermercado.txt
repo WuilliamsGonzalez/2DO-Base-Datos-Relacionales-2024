@@ -1,0 +1,30 @@
+
+--creando tabla
+--create database ejemplo;
+use ejemplo;
+create table producto
+(id_producto int primary key,
+ nombreproducto varchar(25) not null,
+ precio int null,
+ descripcionproducto text null
+ );
+ 
+ insert into producto(id_producto, nombreproducto, precio, descripcionproducto)
+ values(1, 'Esponja', 990, 'Esponja para loza'),
+  	   (2, 'Desinfectante', 1590, 'Mata virus y bacterias'),
+       (3, 'Arroz', 2000, 'Alimento no perecible'),
+       (4, 'Notmayo', 3600, 'Mayonesa artificial');
+
+--pedir dos cosas
+SELECT nombreproducto, descripcionproducto FROM Producto;
+SELECT * FROM Producto WHERE descripcionproducto = 'Mayonesa Artificial';
+SELECT * FROM Producto WHERE precio > 1580;
+SELECT * FROM Producto WHERE nombreproducto NOT IN ('Arroz', 'Notmayo');
+SELECT DISTINCT nombreproducto, precio FROM Producto WHERE precio < 2000;
+SELECT * FROM Producto ORDER BY precio DESC;
+SELECT COUNT(*) FROM Producto;
+SELECT COUNT(*) FROM Producto WHERE nombreproducto = 'Arroz';
+SELECT SUM(precio) FROM Producto;
+SELECT COUNT(*), nombreproducto FROM Producto GROUP BY nombreproducto;
+UPDATE Producto set precio = 1000 where id_producto = '3';
+delete from Producto where id_producto = 4;

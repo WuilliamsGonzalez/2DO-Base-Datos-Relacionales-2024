@@ -1,0 +1,11 @@
+
+create table producto(
+	id_producto integer PRIMARY KEY autoincrement,
+  	nombre varchar (50),
+  	descripcion text,
+    precio int not null,
+    cantidad int not null
+);
+
+insert into producto(nombre, descripcion, precio, cantidad) values
+('tablet','tablet de 10 pulgadas', 150000, 15)

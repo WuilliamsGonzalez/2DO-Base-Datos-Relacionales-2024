@@ -1,0 +1,37 @@
+CREATE DATABASE Escuela;
+CREATE TABLE Alumnos(
+	id_alumno int PRIMARY KEY NOT NULL,
+    nombre varchar(50) NOT NULL,
+    edad int,
+    carrera varchar(50),
+    grado int
+);
+
+CREATE TABLE Carreras(
+	id_clave int PRIMARY KEY NOT NULL,
+    nombre varchar (50)
+);
+
+INSERT INTO Alumnos(id_alumno, nombre, edad, carrera, grado)
+VALUES (1,'Juan', 20, 'Mercadotecnia', 2),
+(2,'Carlos', 19, 'Contabilidad', 1),
+(3,'Juan', 20, 'Mercadotecnica', 1),
+(4,'Laura', 20, 'Ingeniería en sistemas', 4),
+(5,'José', 20, 'Mercadotecnia', 4),
+(6,'Alicia', 19, 'Administración', 2),
+(7,'Carmen', 21, 'Ingeniería eléctrica', 1),
+(8,'Flor', 20, 'Matemáticas', 4),
+(9,'Luisa', 20, 'Informática', 4),
+(10,'Ana María', 19, 'Informática', 4),
+(11,'Frida', 21, 'Ingeniería en sistemas', 2),
+(12,'Mateo', 21, 'Mercadotecnia', 3),
+(13,'Dominique', 20, 'Contabilidad', 5);
+--PARA ACTUALIZAR 
+UPDATE Alumnos SET nombre = 'Carlos' WHERE id_alumno = 2;
+UPDATE Alumnos SET carrera  = 'Inglés' WHERE id_alumno = 6;
+--PARA VER LOS ALUMNOS DE EDAD 21 O MAYOR
+SELECT * FROM Alumnos;
+SELECT nombre FROM Alumnos WHERE edad >= 21;
+--PARA CAMBIAR LA CARRERA
+UPDATE Alumnos SET carrera = 'Base de datos' WHERE id_alumno = 4;
+UPDATE Alumnos SET carrera = 'Base de datos' WHERE id_alumno = 8;

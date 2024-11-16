@@ -67,6 +67,10 @@ Cada clase está documentada en carpetas separadas, con los archivos correspondi
  - [Página web de Programizz](https://www.programiz.com/sql/online-compiler/) para primeros ejercicios de ejemplo.
 - [Descargar MySQL Workbench](https://dev.mysql.com/downloads/workbench/) para ejecutar consultas SQL.  
 - [Descargar MySQL Server](https://dev.mysql.com/downloads/server/) para usar el servidor de SQL.  
+  
+- [![MySQL](https://www.mysql.com/common/logos/logo-mysql-170x115.png)](https://www.mysql.com/)  
+  **MySQL**: Gestor de bases de datos. Descarga desde el sitio oficial de [MySQL](https://www.mysql.com/). 
+
 
 Ejemplo básico de ejecución:
 - SQL
@@ -86,8 +90,6 @@ Ejemplo básico de ejecución:
    ```bash
    git clone https://github.com/WuilliamsGonzalez/2DO-Base-Datos-Relacionales-2024.git
 
-- [![MySQL](https://www.mysql.com/common/logos/logo-mysql-170x115.png)](https://www.mysql.com/)  
-  **MySQL**: Gestor de bases de datos. Descarga desde el sitio oficial de [MySQL](https://www.mysql.com/). 
 
 Contacto
 Si tienes dudas o sugerencias, no dudes en contactarme a través de mi LinkedIn o revisar mis otros proyectos en mi GitHub.

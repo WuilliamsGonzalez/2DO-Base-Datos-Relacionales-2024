@@ -64,7 +64,7 @@ Cada clase está documentada en carpetas separadas, con los archivos correspondi
 - Conocimiento básico de SQL y el modelo relacional.  
 
 ### Configuración sugerida:  
- - [Página web de Programizo](https://www.programiz.com/sql/online-compiler/) para primeros ejercicios de ejemplo.
+ - [Página web de Programizz](https://www.programiz.com/sql/online-compiler/) para primeros ejercicios de ejemplo.
 - [Descargar MySQL Workbench](https://dev.mysql.com/downloads/workbench/) para ejecutar consultas SQL.  
 - [Descargar MySQL Server](https://dev.mysql.com/downloads/server/) para usar el servidor de SQL.  
 

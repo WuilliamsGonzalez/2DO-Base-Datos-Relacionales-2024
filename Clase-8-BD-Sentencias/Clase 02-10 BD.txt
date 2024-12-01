@@ -1,0 +1,49 @@
+CREATE TABLE inventos(
+	id integer Primary Key autoincrement, 
+  	nombre_invento text not null,
+  	año_creacion integer not null,
+	descripcion text
+);
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Maquina voladora', 1485, 'Un diseño para un aparato volador');
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Tanque acorazado', 1487, 'Vehiculo de combate con protección');
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Reloj mecanico', 1490, 'Dispositivo para medir el tiempo');
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Hombre de vitruvio', 1492, 'Estudio de las proporciones del cuerpo');
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Escafandra de buceo', 1500, 'Traje diseñado para permitir respirar bajo el agua');
+
+INSERT INTO inventos(nombre_invento, año_creacion, descripcion)
+values('Maquina de guerra', 1486, 'Vehículo blindado con armas para el campo de batalla');
+
+Select * from inventos
+select nombre_invento , año_creacion from inventos;
+
+
+select nombre_invento , año_creacion
+from inventos
+where año_creacion>=1487;
+
+select nombre_invento, año_creacion
+from inventos
+order by nombre_invento desc;
+
+update inventos 
+set descripcion = 'Aparato diseñado para volar como un pajaro, con alas impulsadas por un sistema de poleas';
+
+select nombre_invento, descripcion 
+from inventos
+where descripcion like '%cuerpo%';
+
+select count(*) from inventos;
+
+delete from inventos
+where nombre_invento = 'Paracaidas';
+

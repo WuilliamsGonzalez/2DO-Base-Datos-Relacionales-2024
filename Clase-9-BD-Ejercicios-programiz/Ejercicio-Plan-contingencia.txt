@@ -1,0 +1,32 @@
+Create table Empleado(
+	id_empleado int Primary Key,
+  	nombre varchar(50),
+  	id_departamento int,
+  	FOREIGN KEY (id_departamento) references Departamento (id_departamento)
+);
+
+Create table Departamento(
+	id_departamento int Primary Key,
+  	nombre varchar(50)
+);
+
+Create table PLan_contingencia(
+	id_plan int PRIMARY KEY,
+  	descripcion text,
+  	id_departamento int,
+  	FOREIGN KEY (id_departamento) references Departamento (id_departamento)
+);
+
+Create table Evaluacion_plan(
+	id_evaluacion int PRIMARY KEY,
+  	fecha date,
+  	resultado varchar(20),
+  	id_plan int,
+  	FOREIGN KEY (id_plan) references Plan_contingencia (id_plan)
+);
+
+-- Consulta que selecciona los planes de contingencia asociados a un departamento específico
+select Plan_contingencia.descripcion
+from Plan_contingencia
+join Departamento on plan_contingencia.id_departamento = Departamento.id_departamento
+where Departamento.nombre = 'TI';

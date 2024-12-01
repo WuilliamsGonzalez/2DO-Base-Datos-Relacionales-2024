@@ -1,0 +1,37 @@
+use empresa;
+select * from empleado;
+select e.emp_rut,e.emp_nombre,c.crg_nombre as cargos, co.com_nombre
+from empleado as e
+inner join cargo as c
+	on e.emp_id_cargo = c.crg_id
+inner join comuna as co
+	on e.emp_id_comuna = co.com_id
+order by cargos;
+-- Seleccionar el nombre, apellido y la comuna con su nombre
+
+select e.emp_nombre, e.emp_apellido, e.emp_com_nombre
+from empleado as e
+inner join comuna as c
+on e.emp_id_comuna = c.com_id;
+
+-- Seleccionar productos que no se han vendido
+
+select * from productocliente;
+select * from producto;
+
+select *
+from producto as p
+left join productocliente as pc
+on pc.pcl_id_prod = p.prd_id
+where pc.pcl_id_producto is not null;
+
+-- El producto que se ha vendido por lo menos una vez
+use empresa;
+select p.*, count(pcl_id_prod) as cantidad_ventas
+from producto as p
+left join productocliente as pc
+	on pc.pcl_id_prod = p.prd_id
+group by p.prd_id, p.prd_nombre
+having cantidad_ventas <= 1;
+
+
